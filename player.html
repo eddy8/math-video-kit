@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>小学数学视频播放器</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { --dots: rgba(255,170,120,.35); --brown: #6b3a1f; --accent: #ff8a3d; }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; font-family: "Noto Sans CJK SC", sans-serif; }
+  body::before { content: ""; position: absolute; inset: 0; opacity: .6;
+    background-image: radial-gradient(circle, var(--dots) 6px, transparent 7px), radial-gradient(circle, var(--dots) 4px, transparent 5px);
+    background-size: 150px 150px, 110px 110px; background-position: 20px 30px, 70px 90px; }
+  #gl { position: absolute; left: 0; top: 0; z-index: 1; }
+  #topshade { position: absolute; left: 0; right: 0; top: 0; height: 520px; z-index: 2;
+    background: linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,0)); pointer-events: none; }
+  #dim { position: absolute; inset: 0; z-index: 3; background: rgba(255,248,236,.86); opacity: 0; }
+  #ui { position: absolute; inset: 0; z-index: 4; }
+  #ui > div { position: absolute; }
+  .tag { left: 50%; top: 96px; transform: translateX(-50%); background: var(--accent); color: #fff; font-weight: 900;
+    font-size: 36px; padding: 6px 30px; border-radius: 40px; box-shadow: 0 6px 0 rgba(0,0,0,.15); letter-spacing: 2px; white-space: nowrap; }
+  .titlebadge { left: 50%; top: 170px; font-size: 76px; font-weight: 900; color: #fff; white-space: nowrap;
+    -webkit-text-stroke: 14px var(--brown); paint-order: stroke fill; text-shadow: 0 10px 0 rgba(0,0,0,.15); }
+  .num, .focus { font-weight: 900; color: var(--brown); white-space: nowrap; line-height: 1;
+    -webkit-text-stroke: 10px #fff; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(120,60,20,.18); }
+  .dot { display: inline-block; width: .2em; height: .2em; border-radius: 50%; background: #ff3d5a; border: 8px solid #fff; margin: 0 .06em; }
+  .unit { font-size: .55em; margin-left: .12em; }
+  .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: .62em; line-height: 1.02; margin: 0 .08em; }
+  .frac span:first-child { border-bottom: .1em solid currentColor; padding: 0 .12em; }
+  .big { left: 50%; top: 330px; transform: translate(-50%, -50%); text-align: center; }
+  .big .num { font-size: 200px; display: block; }
+  .bigsub { margin-top: 20px; font-size: 42px; font-weight: 700; color: #a0623a; background: rgba(255,255,255,.9); padding: 4px 28px; border-radius: 30px; display: inline-block; white-space: nowrap; }
+  .cap { left: 50%; top: 1715px; transform: translate(-50%, -50%); background: #fff; border-radius: 34px; padding: 18px 46px;
+    font-size: 50px; font-weight: 700; line-height: 72px; color: #4a2c1a; text-align: center; white-space: nowrap; box-shadow: 0 8px 0 rgba(200,120,70,.25); }
+  .cap b { color: #ff5a3c; }
+  .cap.dd { background: #fff6e8; border: 6px solid #f4a85e; }
+  .cap .who { position: absolute; left: 30px; top: -30px; background: #f4a85e; color: #fff; font-size: 32px; line-height: 44px; padding: 2px 20px; border-radius: 24px; }
+  .pill { transform: translate(-50%, -100%); font-size: 40px; font-weight: 900; color: #fff; padding: 4px 24px; border-radius: 40px; white-space: nowrap; box-shadow: 0 6px 0 rgba(0,0,0,.12); }
+  .pill::after { content: ""; position: absolute; left: 50%; bottom: -14px; margin-left: -12px; border: 12px solid transparent; border-bottom: 0; border-top-color: var(--c); }
+  .bubble { background: #fff; color: #4a2c1a; font-size: 48px; font-weight: 900; padding: 8px 28px; border-radius: 40px; white-space: nowrap; box-shadow: 0 6px 0 rgba(0,0,0,.12); }
+  .bubble::after { content: ""; position: absolute; left: 66%; bottom: -18px; border: 14px solid transparent; border-bottom: 0; border-top: 22px solid #fff; transform: skewX(20deg); }
+  .focus { left: 50%; top: 900px; font-size: 300px; }
+  .fpart { display: inline-block; }
+  .flab { font-size: 54px; font-weight: 900; color: #fff; padding: 6px 30px; border-radius: 40px; white-space: nowrap; transform: translate(-50%, 0); }
+  .flab::before { content: ""; position: absolute; left: 50%; top: -24px; margin-left: -14px; border: 14px solid transparent; border-top: 0; border-bottom: 24px solid var(--c); }
+  .quiz { left: 50%; top: 200px; width: 900px; transform: translateX(-50%); background: #fff; border-radius: 40px; padding: 30px 40px 34px; box-sizing: border-box;
+    box-shadow: 0 10px 0 rgba(200,120,70,.25); text-align: center; }
+  .qhead { position: absolute; left: 50%; top: -30px; transform: translateX(-50%); background: #4dabf7; color: #fff; font-size: 38px; font-weight: 900; padding: 4px 30px; border-radius: 30px; }
+  .qbody { font-size: 60px; font-weight: 900; color: #4a2c1a; line-height: 1.35; margin-top: 10px; }
+  .qbody b { color: #ff5a3c; }
+  .qans { margin-top: 14px; font-size: 64px; font-weight: 900; color: #2f9e44; }
+  .qans .ok { display: inline-block; width: 70px; height: 70px; border-radius: 50%; background: #40c057; color: #fff; font-size: 48px; line-height: 70px; margin-right: 18px; vertical-align: 6px; }
+  .ring { position: absolute; right: 26px; top: 24px; width: 110px; height: 110px; }
+  .ring svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+  .ring .trk { fill: none; stroke: #e9ecef; stroke-width: 10; }
+  .ring .arc { fill: none; stroke: #ff8a3d; stroke-width: 10; stroke-linecap: round; stroke-dasharray: 264; }
+  .ring .cnt { position: absolute; inset: 0; text-align: center; line-height: 110px; font-size: 54px; font-weight: 900; color: #ff8a3d; }
+  .endcard { left: 50%; top: 150px; transform: translateX(-50%); text-align: center; width: 980px; }
+  .et { font-size: 84px; font-weight: 900; color: #fff; -webkit-text-stroke: 14px var(--brown); paint-order: stroke fill; white-space: nowrap; }
+  .es { margin-top: 26px; display: inline-block; font-size: 48px; font-weight: 700; color: #4a2c1a; background: #fff; padding: 14px 34px; border-radius: 30px; box-shadow: 0 8px 0 rgba(200,120,70,.25); }
+  .chips { margin-top: 26px; }
+  .chip { display: inline-block; margin: 0 10px; font-size: 60px; font-weight: 900; color: var(--brown); padding: 2px 26px; border-radius: 26px; background: #fff; box-shadow: 0 6px 0 rgba(200,120,70,.25); }
+  .eb { margin-top: 22px; font-size: 36px; font-weight: 700; color: #a0623a; }
+  .see { position: absolute; left: 50%; top: 1380px; transform: translateX(-50%); font-size: 64px; font-weight: 900; color: var(--accent); -webkit-text-stroke: 10px #fff; paint-order: stroke fill; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="topshade"></div>
+<div id="dim"></div>
+<div id="ui"></div>
+<script type="importmap">{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }</script>
+<script type="module" src="./engine/player.js"></script>
+</body>
+</html>

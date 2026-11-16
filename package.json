@@ -1,0 +1,8 @@
+{
+  "name": "math-video-kit",
+  "private": true,
+  "description": "小学数学竖屏科普短视频模板（three.js + 无头 Chrome 逐帧录制）",
+  "dependencies": {
+    "three": "0.170.0"
+  }
+}
