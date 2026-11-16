@@ -72,6 +72,7 @@ pip install --break-system-packages edge-tts playwright scipy pillow
 - 两条视频用 SendUserFile 发给 Sun，文件名为“小学数学第n课_知识点.mp4”。
 - 用 SendUserMessage 发一条消息，两课分两部分写，每部分依次为：
   - 小红书标题、正文（含末行标签），各放进一个代码块；
+  - 放进哪个小红书合集：用 `plan.py` 输出的 `collection`（一册一个合集）。如果 `newCollection` 为 true，说明这是该册第一课，提醒 Sun 先新建这个合集，并附一句 60 字以内的合集简介（写明这一册包含哪些单元、每天更新）；
   - 课号、知识点、对应教材（册、单元、页码）、适合的年龄或年级、主题和讲法；
   - 完整配音稿（代码块）；
   - 练一练的题目和答案。

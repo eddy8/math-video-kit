@@ -32,6 +32,7 @@ FORMATS = {
 }
 FORMAT_ORDER = ["story", "mistake", "compare", "challenge", "magic", "quickfire"]
 CAMERA_STYLES = ["sway", "drift", "breathe", "orbit"]
+COLLECTION = "人教版{book}数学｜豆豆动画课"   # 小红书合集：一册一个
 
 
 def curriculum():
@@ -44,8 +45,10 @@ def lesson_plan(n):
     item = cur[(n - 1) % T]
     theme = THEMES[(n + 5) % 6]
     fmt = FORMAT_ORDER[(n + n // 6) % 6]
+    first_of_book = (n - 1) % T == 0 or cur[(n - 2) % T]["book"] != item["book"]
     return {
         "lesson": n, "round": (n - 1) // T + 1, "title": item["title"], "book": item["book"], "unit": item["unit"],
+        "collection": COLLECTION.format(book=item["book"]), "newCollection": first_of_book,
         "pages": item["pages"], "theme": theme, "themeLabel": THEME_LABEL[theme], "music": MUSIC[theme],
         "format": fmt, "formatDesc": FORMATS[fmt], "cameraStyle": CAMERA_STYLES[(n + 3) % 4],
         "dir": f"lessons/L{n:04d}",
