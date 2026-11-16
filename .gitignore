@@ -6,3 +6,5 @@ lessons/*/*.mp4
 lessons/*/check*.jpg
 lessons/*/parts.txt
 __pycache__/
+lessons/*/final_check.jpg
+lessons/*/make.log
