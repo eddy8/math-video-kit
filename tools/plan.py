@@ -46,9 +46,10 @@ def lesson_plan(n):
     theme = THEMES[(n + 5) % 6]
     fmt = FORMAT_ORDER[(n + n // 6) % 6]
     first_of_book = (n - 1) % T == 0 or cur[(n - 2) % T]["book"] != item["book"]
+    book_index = sum(1 for x in cur[: (n - 1) % T + 1] if x["book"] == item["book"])   # 本册第几课
     return {
         "lesson": n, "round": (n - 1) // T + 1, "title": item["title"], "book": item["book"], "unit": item["unit"],
-        "collection": COLLECTION.format(book=item["book"]), "newCollection": first_of_book,
+        "collection": COLLECTION.format(book=item["book"]), "newCollection": first_of_book, "bookIndex": book_index,
         "pages": item["pages"], "theme": theme, "themeLabel": THEME_LABEL[theme], "music": MUSIC[theme],
         "format": fmt, "formatDesc": FORMATS[fmt], "cameraStyle": CAMERA_STYLES[(n + 3) % 4],
         "dir": f"lessons/L{n:04d}",
