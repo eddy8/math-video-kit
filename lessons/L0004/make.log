@@ -1,0 +1,18 @@
+$ python3 tools/render.py lessons/L0004
+part0.mp4: 帧 0/1281
+part0.mp4: 帧 150/1281
+part0.mp4: 帧 300/1281
+part0.mp4: 帧 450/1281
+part0.mp4: 帧 600/1281
+part0.mp4: 帧 750/1281
+part0.mp4: 帧 900/1281
+part0.mp4: 帧 1050/1281
+part0.mp4: 帧 1200/1281
+无声视频： /home/claude/math-video-kit/lessons/L0004/video.mp4
+$ python3 tools/mix.py lessons/L0004 小学数学第4课_比多少.mp4
+成片： lessons/L0004/小学数学第4课_比多少.mp4 {     "programs": [      ],     "streams": [         {             "width": 1080,             "height": 1920         },         {          }     ],     "format": {         "duration": "42.700000"     } } 
+
+成片：/home/claude/math-video-kit/lessons/L0004/小学数学第4课_比多少.mp4
+时长 42.70s，1080x1920，响度 -14.2 LUFS，峰值 -1.5 dBTP
+抽帧：/home/claude/math-video-kit/lessons/L0004/final_check.jpg
+通过

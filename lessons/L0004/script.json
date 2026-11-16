@@ -1,0 +1,210 @@
+{
+ "lesson": 4,
+ "round": 1,
+ "title": "比多少",
+ "book": "一年级上册 · 数学游戏",
+ "theme": "ocean",
+ "format": "magic",
+ "cameraStyle": "orbit",
+ "music": "marimba",
+ "lines": [
+  {
+   "id": "hook",
+   "speaker": "doudou",
+   "say": "看我变魔术！贝壳，变！",
+   "caption": "看我变魔术！<br><b>贝壳</b>，变！",
+   "marks": {
+    "magic": [
+     "变",
+     1
+    ]
+   }
+  },
+  {
+   "id": "ask",
+   "speaker": "doudou",
+   "say": "贝壳变多啦，对不对？",
+   "caption": "贝壳<b>变多</b>啦，对不对？",
+   "marks": {
+    "more0": "变多"
+   }
+  },
+  {
+   "id": "reveal",
+   "speaker": "narrator",
+   "say": "别急，我们来揭秘：一个对一个。",
+   "caption": "别急，我们来揭秘<br><b>一个对一个</b>",
+   "marks": {
+    "pair": "一个对一个"
+   },
+   "gap": 0.35
+  },
+  {
+   "id": "live",
+   "speaker": "narrator",
+   "say": "每个贝壳里住一颗珍珠，都没有多余的。",
+   "caption": "每个贝壳里住 1 颗珍珠<br>都<b>没有多余</b>的",
+   "marks": {
+    "none": "没有多余"
+   }
+  },
+  {
+   "id": "same",
+   "speaker": "narrator",
+   "say": "原来没变多，它们同样多！",
+   "caption": "原来没变多<br>它们<b>同样多</b>！",
+   "marks": {
+    "equal": "同样多"
+   }
+  },
+  {
+   "id": "again",
+   "speaker": "doudou",
+   "say": "再变！多了一颗珍珠！",
+   "caption": "再变！<br>多了 <b>1</b> 颗珍珠！",
+   "marks": {
+    "magic2": "变",
+    "extra": "多了"
+   }
+  },
+  {
+   "id": "more",
+   "speaker": "narrator",
+   "say": "这颗珍珠没有贝壳住，珍珠比贝壳多一个。",
+   "caption": "这颗珍珠没有贝壳住<br>珍珠比贝壳<b>多 1 个</b>",
+   "marks": {
+    "lonely": "没有",
+    "moreAt": "多一个"
+   }
+  },
+  {
+   "id": "less",
+   "speaker": "narrator",
+   "say": "也可以说，贝壳比珍珠少一个。",
+   "caption": "也可以说<br>贝壳比珍珠<b>少 1 个</b>",
+   "marks": {
+    "lessAt": "少一个"
+   }
+  },
+  {
+   "id": "quiz",
+   "speaker": "narrator",
+   "say": "练一练：小鱼和海星，谁多呢？",
+   "caption": "练一练<br><b>小鱼</b>和<b>海星</b>，谁多呢？",
+   "marks": {
+    "fish": "小鱼",
+    "stars": "海星"
+   },
+   "gap": 3.2
+  },
+  {
+   "id": "ans",
+   "speaker": "narrator",
+   "say": "一个对一个，小鱼多出一条，小鱼多！",
+   "caption": "一个对一个，小鱼多出 1 条<br><b>小鱼多</b>！",
+   "marks": {
+    "answer": "一个对一个",
+    "win": [
+     "小鱼多",
+     1
+    ]
+   }
+  },
+  {
+   "id": "outro",
+   "speaker": "doudou",
+   "say": "我懂啦！一个对一个，就能比出多和少！",
+   "caption": "我懂啦！<b>一个对一个</b><br>就能比出<b>多</b>和<b>少</b>！",
+   "marks": {
+    "learned": "懂"
+   }
+  }
+ ],
+ "end": {
+  "summary": "一个对一个，比出多和少"
+ },
+ "sfx": [
+  {
+   "at": "magic",
+   "type": "sparkle"
+  },
+  {
+   "at": "magic",
+   "type": "whoosh",
+   "offset": 0.1
+  },
+  {
+   "at": "pair",
+   "type": "ding"
+  },
+  {
+   "at": "pair",
+   "type": "pop",
+   "offset": 0.65
+  },
+  {
+   "at": "pair",
+   "type": "pop",
+   "offset": 1.4
+  },
+  {
+   "at": "pair",
+   "type": "pop",
+   "offset": 2.15
+  },
+  {
+   "at": "pair",
+   "type": "pop",
+   "offset": 2.9
+  },
+  {
+   "at": "pair",
+   "type": "pop",
+   "offset": 3.65
+  },
+  {
+   "at": "equal",
+   "type": "tada"
+  },
+  {
+   "at": "magic2",
+   "type": "sparkle"
+  },
+  {
+   "at": "extra",
+   "type": "pop"
+  },
+  {
+   "at": "lonely",
+   "type": "knock"
+  },
+  {
+   "at": "moreAt",
+   "type": "ding"
+  },
+  {
+   "at": "lessAt",
+   "type": "ding"
+  },
+  {
+   "at": "quiz",
+   "type": "whoosh"
+  },
+  {
+   "at": "quiz_end",
+   "type": "count3"
+  },
+  {
+   "at": "answer",
+   "type": "whoosh"
+  },
+  {
+   "at": "win",
+   "type": "tada"
+  },
+  {
+   "at": "learned",
+   "type": "boing"
+  }
+ ]
+}
