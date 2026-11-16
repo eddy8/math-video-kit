@@ -17,6 +17,8 @@ export function createUI(meta) {
   const el = (cls, html = "", parent = root) => { const d = document.createElement("div"); d.className = cls; d.innerHTML = html; parent.appendChild(d); return d; };
   const tag = el("tag", `小学数学 · 第 ${meta.lesson} 课${meta.round > 1 ? " · 第二轮" : ""}`);
   const titleBadge = el("titlebadge", meta.title);
+  // 长课题自动缩小字号，保证一行放得下（中文字宽约等于字号）
+  titleBadge.style.fontSize = `${Math.min(76, Math.floor(920 / Math.max(1, meta.title.length)))}px`;
   const dim = document.getElementById("dim");
 
   const reg = { big: [], pills: [], bubbles: [], focus: [], quiz: [], end: null, captions: [] };
@@ -42,7 +44,9 @@ export function createUI(meta) {
     },
     /** 片尾卡：{at, summary, chips:[]} */
     end(spec) {
+      const etLen = `第 ${meta.lesson} 课 · ${meta.title}`.length;
       const d = el("endcard", `<div class="et">第 ${meta.lesson} 课 · ${meta.title}</div><div class="es">${spec.summary}</div>${spec.chips ? `<div class="chips">${spec.chips.map((c) => `<span class="chip">${numHTML(c)}</span>`).join("")}</div>` : ""}`);
+      d.querySelector(".et").style.fontSize = `${Math.min(84, Math.floor(1000 / Math.max(1, etLen * 0.9)))}px`;
       reg.end = { ...spec, d };
     },
     captions(lines) {

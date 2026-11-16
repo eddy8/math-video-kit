@@ -144,7 +144,7 @@ def main(lesson_dir, out_name):
     for c in cues:
         at = c["at"] if isinstance(c["at"], (int, float)) else E[c["at"]]
         if c["type"] == "count3":   # 练一练倒计时：每秒一声
-            for i in range(3): fx.add(at + i, sfx("tick"))
+            for i in range(3): fx.add(at + c.get("offset", 0) + i, sfx("tick"))
             continue
         fx.add(at + c.get("offset", 0), sfx(c["type"]))
     mix = voice * 1.0 + mus * 0.9 + fx.x[:N]

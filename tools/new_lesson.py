@@ -17,7 +17,8 @@ d = ROOT / p["dir"]
 d.mkdir(parents=True, exist_ok=True)
 book = f'{p["book"]} · {p["unit"].split(" ", 1)[-1]}'
 script = {
-    "lesson": n, "round": p["round"], "title": p["title"], "book": book,
+    # 片头和片尾用短课题：课程表里冒号后面的细分内容不放进标题（模板也会自动缩小长标题）
+    "lesson": n, "round": p["round"], "title": p["title"].split("：")[0], "book": book,
     "theme": p["theme"], "format": p["format"], "cameraStyle": p["cameraStyle"], "music": p["music"],
     "lines": [], "end": {"summary": ""}, "sfx": [],
 }
