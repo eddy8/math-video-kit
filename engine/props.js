@@ -143,7 +143,7 @@ export const props = {
     const g = new THREE.Group(); g.userData.slices = [];
     for (let i = 0; i < n; i++) {
       const a0 = (i / n) * Math.PI * 2, a1 = ((i + 1) / n) * Math.PI * 2;
-      const shape = new THREE.Shape(); shape.moveTo(0, 0); shape.absarc(0, 0, r, a0, a1); shape.closePath();
+      const shape = new THREE.Shape(); shape.moveTo(0, 0); shape.lineTo(Math.cos(a0) * r, Math.sin(a0) * r); shape.absarc(0, 0, r, a0, a1); shape.closePath();  // 先 lineTo：只有 moveTo 时 absarc 会丢掉圆心点
       const s = m(new THREE.ExtrudeGeometry(shape, { depth: 0.08, bevelEnabled: true, bevelThickness: 0.01, bevelSize: 0.008, bevelSegments: 2 }), phys(color));
       s.rotation.x = -Math.PI / 2;
       const top = m(new THREE.ShapeGeometry(shape), std(topColor)); top.rotation.x = -Math.PI / 2; top.position.y = 0.092; top.scale.setScalar(0.9);
