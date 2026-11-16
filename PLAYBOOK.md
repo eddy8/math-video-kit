@@ -35,6 +35,7 @@ pip install --break-system-packages edge-tts playwright scipy pillow
 2. 把设计里的配音脚本、片尾总结、音效填进 `script.json`。
    - 配音口语、短句，数字写成汉字（例如“零点五”“三乘四等于十二”）；字幕用阿拉伯数字。
    - 所有数字、算式、答案先用 Python 算一遍。
+   - 多音字：`data/polyphones.json` 里的字（数、重、长、量、行、差、称、率、倒、还、只、种）在 `say` 里每一处都要标音，写成 `数[shǔ]`、`重[chóng]`；也可以改写避开，例如把“不重”改成“不重复”时同样要标音。配音时标音的字会换成同音字（数[shǔ] 念“鼠”），字幕仍显示原字。`voice.py` 会先检查，有没标的字就直接报错并给出读音提示；也可以单独运行 `python3 tools/pron.py lessons/Lnnnn` 检查。发现新的读错的字，补进 `polyphones.json`。
 3. `python3 tools/voice.py lessons/Lnnnn`：生成配音和 `timeline.json`，会打印时长和全部事件时刻。
    - 超过 60 秒就删减配音或停顿；目标 40–55 秒。
    - 关键词没找到会报错并列出逐词结果，按提示改 `marks`。

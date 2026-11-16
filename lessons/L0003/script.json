@@ -7,32 +7,203 @@
   "cameraStyle": "breathe",
   "music": "dreamy",
   "lines": [
-    { "id": "hook", "speaker": "doudou", "say": "哇，好多亮晶晶的星星！一共有几颗呀？", "caption": "哇，好多亮晶晶的<b>星星</b>！<br>一共有几颗呀？", "marks": { "stars": "星星" } },
-    { "id": "intro", "speaker": "narrator", "say": "别急，我们闯三关，学会数一数！", "caption": "别急，我们闯三关<br>学会<b>数一数</b>！", "gap": 0.35 },
-    { "id": "lv1", "speaker": "narrator", "say": "第一关，一个一个地数。", "caption": "第一关：<b>一个一个</b>地数" },
-    { "id": "cnt1", "speaker": "narrator", "say": "数一个，点一个：一，二，三，四，五。", "caption": "数一个，点一个<br><b>1、2、3、4、5</b>", "marks": { "c1": ["一", 2], "c2": "二", "c3": "三", "c4": "四", "c5": "五" }, "gap": 0.3 },
-    { "id": "sum1", "speaker": "narrator", "say": "最后数到五，就是一共有五颗。", "caption": "最后数到 <b>5</b><br>就是一共有 <b>5</b> 颗", "marks": { "total1": "五颗" } },
-    { "id": "lv2", "speaker": "narrator", "say": "第二关，按顺序数，不漏也不重。", "caption": "第二关：<b>按顺序</b>数<br>不漏也不重", "gap": 0.3 },
-    { "id": "oops", "speaker": "doudou", "say": "哎呀，我数乱了，数成七个啦！", "caption": "哎呀，我数乱了<br>数成 <b>7</b> 个啦！", "marks": { "wrong": "七个" } },
-    { "id": "fix", "speaker": "narrator", "say": "先排好队，再从左往右数。", "caption": "先<b>排好队</b><br>再<b>从左往右</b>数", "marks": { "line": "排好队", "ltr": "从左往右" }, "gap": 0.3 },
-    { "id": "cnt2", "speaker": "narrator", "say": "一，二，三，四，一共四个小火箭。", "caption": "<b>1、2、3、4</b><br>一共 <b>4</b> 个小火箭", "marks": { "r1": "一", "r2": "二", "r3": "三", "r4": "四", "total2": "四个" } },
-    { "id": "lv3", "speaker": "narrator", "say": "第三关，你来数，这里有几个小星球？", "caption": "第三关：你来数<br>这里有几个<b>小星球</b>？", "marks": { "planets": "小星球" }, "gap": 3.2 },
-    { "id": "ans", "speaker": "narrator", "say": "答案是六个，你数对了吗？", "caption": "答案是 <b>6</b> 个<br>你数对了吗？", "marks": { "answer": "六个" } },
-    { "id": "outro", "speaker": "doudou", "say": "我学会啦！一个一个数，按顺序数！", "caption": "我学会啦！<br><b>一个一个</b>数，<b>按顺序</b>数！", "marks": { "learned": "学会" } }
+    {
+      "id": "hook",
+      "speaker": "doudou",
+      "say": "哇，好多亮晶晶的星星！一共有几颗呀？",
+      "caption": "哇，好多亮晶晶的<b>星星</b>！<br>一共有几颗呀？",
+      "marks": {
+        "stars": "星星"
+      }
+    },
+    {
+      "id": "intro",
+      "speaker": "narrator",
+      "say": "别急，我们闯三关，学会数[shǔ]一数[shǔ]！",
+      "caption": "别急，我们闯三关<br>学会<b>数一数</b>！",
+      "gap": 0.35
+    },
+    {
+      "id": "lv1",
+      "speaker": "narrator",
+      "say": "第一关，一个一个地数[shǔ]。",
+      "caption": "第一关：<b>一个一个</b>地数"
+    },
+    {
+      "id": "cnt1",
+      "speaker": "narrator",
+      "say": "数[shǔ]一个，点一个：一，二，三，四，五。",
+      "caption": "数一个，点一个<br><b>1、2、3、4、5</b>",
+      "marks": {
+        "c1": [
+          "一",
+          2
+        ],
+        "c2": "二",
+        "c3": "三",
+        "c4": "四",
+        "c5": "五"
+      },
+      "gap": 0.3
+    },
+    {
+      "id": "sum1",
+      "speaker": "narrator",
+      "say": "最后数[shǔ]到五，就是一共有五颗。",
+      "caption": "最后数到 <b>5</b><br>就是一共有 <b>5</b> 颗",
+      "marks": {
+        "total1": "五颗"
+      }
+    },
+    {
+      "id": "lv2",
+      "speaker": "narrator",
+      "say": "第二关，按顺序数[shǔ]，不漏也不重[chóng]。",
+      "caption": "第二关：<b>按顺序</b>数<br>不漏也不重",
+      "gap": 0.3
+    },
+    {
+      "id": "oops",
+      "speaker": "doudou",
+      "say": "哎呀，我数[shǔ]乱了，数[shǔ]成七个啦！",
+      "caption": "哎呀，我数乱了<br>数成 <b>7</b> 个啦！",
+      "marks": {
+        "wrong": "七个"
+      }
+    },
+    {
+      "id": "fix",
+      "speaker": "narrator",
+      "say": "先排好队，再从左往右数[shǔ]。",
+      "caption": "先<b>排好队</b><br>再<b>从左往右</b>数",
+      "marks": {
+        "line": "排好队",
+        "ltr": "从左往右"
+      },
+      "gap": 0.3
+    },
+    {
+      "id": "cnt2",
+      "speaker": "narrator",
+      "say": "一，二，三，四，一共四个小火箭。",
+      "caption": "<b>1、2、3、4</b><br>一共 <b>4</b> 个小火箭",
+      "marks": {
+        "r1": "一",
+        "r2": "二",
+        "r3": "三",
+        "r4": "四",
+        "total2": "四个"
+      }
+    },
+    {
+      "id": "lv3",
+      "speaker": "narrator",
+      "say": "第三关，你来数[shǔ]，这里有几个小星球？",
+      "caption": "第三关：你来数<br>这里有几个<b>小星球</b>？",
+      "marks": {
+        "planets": "小星球"
+      },
+      "gap": 3.2
+    },
+    {
+      "id": "ans",
+      "speaker": "narrator",
+      "say": "答案是六个，你数[shǔ]对了吗？",
+      "caption": "答案是 <b>6</b> 个<br>你数对了吗？",
+      "marks": {
+        "answer": "六个"
+      }
+    },
+    {
+      "id": "outro",
+      "speaker": "doudou",
+      "say": "我学会啦！一个一个数[shǔ]，按顺序数[shǔ]！",
+      "caption": "我学会啦！<br><b>一个一个</b>数，<b>按顺序</b>数！",
+      "marks": {
+        "learned": "学会"
+      }
+    }
   ],
-  "end": { "summary": "一个一个数，按顺序数，不漏也不重" },
+  "end": {
+    "summary": "一个一个数，按顺序数，不漏也不重"
+  },
   "sfx": [
-    { "at": "stars", "type": "sparkle" },
-    { "at": "c1", "type": "pop" }, { "at": "c2", "type": "pop" }, { "at": "c3", "type": "pop" }, { "at": "c4", "type": "pop" }, { "at": "c5", "type": "pop" },
-    { "at": "total1", "type": "ding" },
-    { "at": "lv2", "type": "whoosh" },
-    { "at": "wrong", "type": "wrong" },
-    { "at": "line", "type": "whoosh" },
-    { "at": "r1", "type": "knock" }, { "at": "r2", "type": "knock" }, { "at": "r3", "type": "knock" }, { "at": "r4", "type": "knock" },
-    { "at": "total2", "type": "ding" },
-    { "at": "planets", "type": "sparkle" },
-    { "at": "lv3_end", "type": "count3", "offset": 0.1 },
-    { "at": "answer", "type": "ding" },
-    { "at": "learned", "type": "boing" }
+    {
+      "at": "stars",
+      "type": "sparkle"
+    },
+    {
+      "at": "c1",
+      "type": "pop"
+    },
+    {
+      "at": "c2",
+      "type": "pop"
+    },
+    {
+      "at": "c3",
+      "type": "pop"
+    },
+    {
+      "at": "c4",
+      "type": "pop"
+    },
+    {
+      "at": "c5",
+      "type": "pop"
+    },
+    {
+      "at": "total1",
+      "type": "ding"
+    },
+    {
+      "at": "lv2",
+      "type": "whoosh"
+    },
+    {
+      "at": "wrong",
+      "type": "wrong"
+    },
+    {
+      "at": "line",
+      "type": "whoosh"
+    },
+    {
+      "at": "r1",
+      "type": "knock"
+    },
+    {
+      "at": "r2",
+      "type": "knock"
+    },
+    {
+      "at": "r3",
+      "type": "knock"
+    },
+    {
+      "at": "r4",
+      "type": "knock"
+    },
+    {
+      "at": "total2",
+      "type": "ding"
+    },
+    {
+      "at": "planets",
+      "type": "sparkle"
+    },
+    {
+      "at": "lv3_end",
+      "type": "count3",
+      "offset": 0.1
+    },
+    {
+      "at": "answer",
+      "type": "ding"
+    },
+    {
+      "at": "learned",
+      "type": "boing"
+    }
   ]
 }

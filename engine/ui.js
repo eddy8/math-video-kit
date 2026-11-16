@@ -42,7 +42,7 @@ export function createUI(meta) {
     },
     /** 片尾卡：{at, summary, chips:[]} */
     end(spec) {
-      const d = el("endcard", `<div class="et">第 ${meta.lesson} 课 · ${meta.title}</div><div class="es">${spec.summary}</div>${spec.chips ? `<div class="chips">${spec.chips.map((c) => `<span class="chip">${numHTML(c)}</span>`).join("")}</div>` : ""}<div class="eb">对应人教版${meta.book}</div>`);
+      const d = el("endcard", `<div class="et">第 ${meta.lesson} 课 · ${meta.title}</div><div class="es">${spec.summary}</div>${spec.chips ? `<div class="chips">${spec.chips.map((c) => `<span class="chip">${numHTML(c)}</span>`).join("")}</div>` : ""}`);
       reg.end = { ...spec, d };
     },
     captions(lines) {

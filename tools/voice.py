@@ -7,10 +7,15 @@ script.json 中每句：
    "caption": "屏幕字幕 HTML（用阿拉伯数字，<b>重点</b>，<br> 换行）",
    "gap": 句后停顿秒数（默认 0.45）,
    "marks": {"事件名": "关键词" | ["关键词", 第几次出现(从0起)]}}
+多音字：data/polyphones.json 里的字在 say 中每一处都要标音，如 数[shǔ]、重[chóng]，否则直接报错（见 tools/pron.py）。
+marks 的关键词按原字写，不用带标音。
 自动事件：每句 id 为该句开始时刻，id_end 为结束时刻；end 为全片结束卡时刻。
 """
 import asyncio, json, os, subprocess, sys, wave
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pron import check_script, to_tts   # 多音字检查与标音替换
 
 import certifi
 certifi.where = lambda: "/root/.ccr/ca-bundle.crt"   # edge-tts 固定用 certifi；改用代理 CA
@@ -80,6 +85,9 @@ def find_mark(words, key, nth=0):
 async def main(lesson_dir):
     d = Path(lesson_dir)
     script = json.loads((d / "script.json").read_text())
+    problems = check_script(script)
+    if problems:
+        sys.exit("多音字没有标音，请在 say 里写成 字[拼音]，或改写避开：\n" + "\n".join(problems))
     vdir = d / "voice"
     vdir.mkdir(exist_ok=True)
     lines, events, clips = [], {}, []
@@ -87,7 +95,8 @@ async def main(lesson_dir):
     for i, L in enumerate(script["lines"]):
         spk = L.get("speaker", "narrator")
         mp3, wav = vdir / f"{i:02d}.mp3", vdir / f"{i:02d}.wav"
-        words = await synth(L["say"], spk, mp3)
+        tts_text, subs = to_tts(L["say"])
+        words = await synth(tts_text, spk, mp3)
         audio = trim_to_wav(mp3, wav)
         dur = len(audio) / SR
         start, end = t, t + dur
@@ -96,6 +105,7 @@ async def main(lesson_dir):
         events[f"{lid}_end"] = round(end, 3)
         for name, spec in (L.get("marks") or {}).items():
             key, nth = (spec, 0) if isinstance(spec, str) else (spec[0], spec[1])
+            key = "".join(subs.get(c, c) for c in key)   # 关键词里的多音字同样换成配音用的同音字
             off = find_mark(words, key, nth)
             if off is None:
                 sys.exit(f"第 {i} 句没找到关键词“{key}”，逐词结果：{[w for _, w in words]}")
