@@ -5,7 +5,7 @@
   python3 tools/plan.py --lesson 57     # 只看某一课
 
 规则（唯一出处，改规则只改这里）：
-- 第 3–5 课是样片（2026-11-16 交付）。2026-11-17 做第 6、7 课，此后每天 2 课；超过 267 课进入下一轮（课号继续累加）。
+- 第 3–7 课已于 2026-11-16 交付。2026-11-17 做第 8、9 课，此后每天 2 课；超过 267 课进入下一轮（课号继续累加）。
 - 主题、讲法、镜头、配乐按课号轮换，相邻两课一定不同主题。
 - 设计时如果某个知识点明显更适合另一个主题或讲法（例如人民币→小超市），可以换，但当天两课的主题不能相同。
 """
@@ -17,7 +17,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent.parent
 START = dt.date(2026, 11, 17)
 PER_DAY = 2
-FIRST = 6
+FIRST = 8
 
 THEMES = ["picnic", "kitchen", "space", "ocean", "market", "playground"]
 THEME_LABEL = {"picnic": "森林野餐", "kitchen": "温馨厨房", "space": "太空探险", "ocean": "海底世界", "market": "小超市", "playground": "游乐园"}
