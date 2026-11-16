@@ -1,0 +1,8 @@
+node_modules/
+textbooks/
+lessons/*/voice/
+lessons/*/*.wav
+lessons/*/*.mp4
+lessons/*/check*.jpg
+lessons/*/parts.txt
+__pycache__/
