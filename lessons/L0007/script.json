@@ -1,0 +1,235 @@
+{
+ "lesson": 7,
+ "round": 1,
+ "title": "第几",
+ "book": "一年级上册 · 5以内数的认识和加、减法",
+ "theme": "picnic",
+ "format": "compare",
+ "cameraStyle": "breathe",
+ "music": "ukulele",
+ "lines": [
+  {
+   "id": "hook",
+   "speaker": "narrator",
+   "say": "森林野餐垫上，好吃的排成了一行[háng]。",
+   "caption": "好吃的排成一行",
+   "gap": 0.45,
+   "marks": {
+    "row": "排成"
+   }
+  },
+  {
+   "id": "ask",
+   "speaker": "narrator",
+   "say": "数[shǔ]一数[shǔ]，一共有五个，草莓排第几？",
+   "caption": "一共有 <b>5</b> 个<br>草莓排<b>第几</b>？",
+   "gap": 0.45,
+   "marks": {
+    "total": "五个",
+    "berry": "草莓"
+   }
+  },
+  {
+   "id": "fromleft",
+   "speaker": "doudou",
+   "say": "从左边数[shǔ]，一、二、三、四，第四！",
+   "caption": "从<b>左</b>边数<br>草莓排<b>第 4</b>",
+   "gap": 0.45,
+   "marks": {
+    "lflag": "左边",
+    "l1": "一",
+    "l2": "二",
+    "l3": "三",
+    "l4": [
+     "四",
+     0
+    ],
+    "l_res": "第四"
+   }
+  },
+  {
+   "id": "other",
+   "speaker": "narrator",
+   "say": "换个办法，从右边数[shǔ]呢？试试看！",
+   "caption": "换个办法<br>从<b>右</b>边数呢？",
+   "gap": 0.45,
+   "marks": {
+    "rflag": "右边"
+   }
+  },
+  {
+   "id": "fromright",
+   "speaker": "doudou",
+   "say": "一、二，第二！这样数[shǔ]得更快！",
+   "caption": "从右边数<br>草莓排<b>第 2</b>，更快！",
+   "gap": 0.45,
+   "marks": {
+    "r1": "一",
+    "r2": [
+     "二",
+     0
+    ],
+    "r_res": "第二",
+    "fast": "更快"
+   }
+  },
+  {
+   "id": "both",
+   "speaker": "doudou",
+   "say": "左边第四，右边第二，都是草莓！",
+   "caption": "左边<b>第 4</b>，右边<b>第 2</b><br>都是草莓",
+   "gap": 0.45,
+   "marks": {
+    "tagl": "第四",
+    "tagr": "第二",
+    "spin": "都是"
+   }
+  },
+  {
+   "id": "compare",
+   "speaker": "narrator",
+   "say": "两种[zhǒng]数[shǔ]法都对，右边近，数[shǔ]得快。",
+   "caption": "两种数法<b>都对</b><br>右边近，数得快",
+   "gap": 0.45,
+   "marks": {
+    "right2": "都对",
+    "near": "右边近"
+   }
+  },
+  {
+   "id": "rule",
+   "speaker": "narrator",
+   "say": "所以要先说清，从哪边数[shǔ]起。",
+   "caption": "先说清<br><b>从哪边数起</b>",
+   "gap": 0.45,
+   "marks": {
+    "which": "从哪边"
+   }
+  },
+  {
+   "id": "group",
+   "speaker": "narrator",
+   "say": "从左数[shǔ]四个，是圈起一群。",
+   "caption": "从左数 <b>4 个</b><br>圈起一群",
+   "gap": 0.45,
+   "marks": {
+    "circle": "四个"
+   }
+  },
+  {
+   "id": "one",
+   "speaker": "narrator",
+   "say": "第四呢，只[zhǐ]指草莓这一个。",
+   "caption": "<b>第 4</b><br>只指草莓这 1 个",
+   "gap": 0.45,
+   "marks": {
+    "only": "第四"
+   }
+  },
+  {
+   "id": "quiz",
+   "speaker": "narrator",
+   "say": "练一练：从右边数[shǔ]，第四是谁？",
+   "caption": "练一练：从<b>右</b>边数<br><b>第 4</b> 是谁？",
+   "gap": 3.2,
+   "marks": {}
+  },
+  {
+   "id": "answer",
+   "speaker": "doudou",
+   "say": "糖果一，草莓二，橘子三，饼干是第四！",
+   "caption": "从右边数<br><b>第 4 是饼干</b>",
+   "gap": 0.45,
+   "marks": {
+    "p1": "糖果",
+    "p2": "草莓",
+    "p3": "橘子",
+    "reveal": "饼干"
+   }
+  },
+  {
+   "id": "wrap",
+   "speaker": "doudou",
+   "say": "先说从哪边数[shǔ]，再一个一个数[shǔ]！",
+   "caption": "<b>先说从哪边数</b><br>再一个一个数",
+   "gap": 0.45,
+   "marks": {
+    "again": "再"
+   }
+  }
+ ],
+ "end": {
+  "summary": "先说从哪边数，再一个一个数"
+ },
+ "sfx": [
+  {
+   "at": "row",
+   "type": "pop"
+  },
+  {
+   "at": "total",
+   "type": "ding"
+  },
+  {
+   "at": "l1",
+   "type": "knock"
+  },
+  {
+   "at": "l2",
+   "type": "knock"
+  },
+  {
+   "at": "l3",
+   "type": "knock"
+  },
+  {
+   "at": "l4",
+   "type": "knock"
+  },
+  {
+   "at": "l_res",
+   "type": "ding"
+  },
+  {
+   "at": "rflag",
+   "type": "whoosh"
+  },
+  {
+   "at": "r1",
+   "type": "knock"
+  },
+  {
+   "at": "r2",
+   "type": "knock"
+  },
+  {
+   "at": "fast",
+   "type": "sparkle"
+  },
+  {
+   "at": "spin",
+   "type": "pop"
+  },
+  {
+   "at": "circle",
+   "type": "whoosh"
+  },
+  {
+   "at": "only",
+   "type": "ding"
+  },
+  {
+   "at": "quiz_end",
+   "type": "count3",
+   "offset": 0.1
+  },
+  {
+   "at": "reveal",
+   "type": "tada"
+  },
+  {
+   "at": "again",
+   "type": "sparkle"
+  }
+ ]
+}

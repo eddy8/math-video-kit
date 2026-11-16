@@ -1,0 +1,238 @@
+{
+ "lesson": 6,
+ "round": 1,
+ "title": "比大小",
+ "book": "一年级上册 · 5以内数的认识和加、减法",
+ "theme": "playground",
+ "format": "mistake",
+ "cameraStyle": "drift",
+ "music": "bouncy",
+ "lines": [
+  {
+   "id": "hook",
+   "speaker": "narrator",
+   "say": "游乐园里，皮球和积木哪个多？",
+   "caption": "皮球和积木，<b>哪个多</b>？",
+   "gap": 0.45,
+   "marks": {
+    "balls": "皮球",
+    "blocks": "积木"
+   }
+  },
+  {
+   "id": "guess",
+   "speaker": "doudou",
+   "say": "你看，皮球排得长[cháng]，皮球多！",
+   "caption": "皮球排得长，<b>皮球多</b>！",
+   "gap": 0.45,
+   "marks": {
+    "stretch": "长",
+    "claim": "多"
+   }
+  },
+  {
+   "id": "doubt",
+   "speaker": "narrator",
+   "say": "真的吗？小朋友，他错在哪儿？",
+   "caption": "真的吗？<br>他<b>错在哪儿</b>？",
+   "gap": 0.6,
+   "marks": {
+    "find": "错在哪儿"
+   }
+  },
+  {
+   "id": "pair",
+   "speaker": "narrator",
+   "say": "不能看长[cháng]短，要一个对一个。",
+   "caption": "不能看长短<br>要<b>一个对一个</b>",
+   "gap": 0.45,
+   "marks": {
+    "cross": "不能",
+    "match": "一个对一个"
+   }
+  },
+  {
+   "id": "left",
+   "speaker": "narrator",
+   "say": "积木还[hái]剩一个，积木比皮球多。",
+   "caption": "积木还剩 1 个<br><b>积木比皮球多</b>",
+   "gap": 0.45,
+   "marks": {
+    "more": "多",
+    "spare": "剩"
+   }
+  },
+  {
+   "id": "oops",
+   "speaker": "doudou",
+   "say": "哎呀，我只[zhǐ]看了长[cháng]短，看错啦！",
+   "caption": "哎呀，我只看了长短<br><b>看错啦</b>！",
+   "gap": 0.45,
+   "marks": {
+    "shy": "看错"
+   }
+  },
+  {
+   "id": "count",
+   "speaker": "doudou",
+   "say": "数[shǔ]一数[shǔ]，四个积木，三个皮球！",
+   "caption": "<b>4</b> 个积木，<b>3</b> 个皮球",
+   "gap": 0.45,
+   "marks": {
+    "cnt_block": "四个",
+    "cnt_ball": "三个"
+   }
+  },
+  {
+   "id": "gt",
+   "speaker": "narrator",
+   "say": "四比三多，写作四大于三。",
+   "caption": "4 比 3 多<br><b>4 &gt; 3</b>　4 大于 3",
+   "gap": 0.45,
+   "marks": {
+    "gtsym": "大于"
+   }
+  },
+  {
+   "id": "lt",
+   "speaker": "narrator",
+   "say": "三比四少，写作三小于四。",
+   "caption": "3 比 4 少<br><b>3 &lt; 4</b>　3 小于 4",
+   "gap": 0.45,
+   "marks": {
+    "swap": "少",
+    "ltsym": "小于"
+   }
+  },
+  {
+   "id": "tip",
+   "speaker": "doudou",
+   "say": "开口朝大数[shù]，尖尖朝小数[shù]！",
+   "caption": "<b>开口朝大数</b><br><b>尖尖朝小数</b>",
+   "gap": 0.45,
+   "marks": {
+    "open": "开口",
+    "sharp": "尖尖"
+   }
+  },
+  {
+   "id": "eq",
+   "speaker": "narrator",
+   "say": "再来一个球，同样多，四等于四。",
+   "caption": "同样多<br><b>4 = 4</b>　4 等于 4",
+   "gap": 0.45,
+   "marks": {
+    "add": "再来",
+    "same": "同样多",
+    "eqsym": "等于"
+   }
+  },
+  {
+   "id": "quiz",
+   "speaker": "narrator",
+   "say": "练一练：五和二中间填什么？",
+   "caption": "练一练：<b>5 ○ 2</b>",
+   "gap": 3.2,
+   "marks": {}
+  },
+  {
+   "id": "answer",
+   "speaker": "doudou",
+   "say": "五比二多，五大于二，开口朝着五！",
+   "caption": "<b>5 &gt; 2</b><br>开口朝着 5",
+   "gap": 0.45,
+   "marks": {
+    "reveal": "大于",
+    "mouth": "开口"
+   }
+  },
+  {
+   "id": "wrap",
+   "speaker": "doudou",
+   "say": "一个对一个，谁多谁少看得清！",
+   "caption": "<b>一个对一个</b><br>谁多谁少看得清",
+   "gap": 0.45,
+   "marks": {
+    "clear": "看得清"
+   }
+  }
+ ],
+ "end": {
+  "summary": "一个对一个，开口朝大数"
+ },
+ "sfx": [
+  {
+   "at": "balls",
+   "type": "pop"
+  },
+  {
+   "at": "blocks",
+   "type": "pop"
+  },
+  {
+   "at": "stretch",
+   "type": "whoosh"
+  },
+  {
+   "at": "claim",
+   "type": "boing"
+  },
+  {
+   "at": "doubt",
+   "type": "wrong"
+  },
+  {
+   "at": "match",
+   "type": "whoosh"
+  },
+  {
+   "at": "spare",
+   "type": "ding"
+  },
+  {
+   "at": "oops",
+   "type": "boing"
+  },
+  {
+   "at": "cnt_block",
+   "type": "knock"
+  },
+  {
+   "at": "cnt_ball",
+   "type": "knock"
+  },
+  {
+   "at": "gtsym",
+   "type": "pop"
+  },
+  {
+   "at": "ltsym",
+   "type": "whoosh"
+  },
+  {
+   "at": "open",
+   "type": "sparkle"
+  },
+  {
+   "at": "add",
+   "type": "boing"
+  },
+  {
+   "at": "eqsym",
+   "type": "ding"
+  },
+  {
+   "at": "quiz_end",
+   "type": "count3",
+   "offset": 0.1
+  },
+  {
+   "at": "reveal",
+   "type": "tada"
+  },
+  {
+   "at": "clear",
+   "type": "sparkle"
+  }
+ ]
+}

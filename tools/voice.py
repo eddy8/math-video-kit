@@ -91,6 +91,14 @@ async def main(lesson_dir):
     vdir = d / "voice"
     vdir.mkdir(exist_ok=True)
     lines, events, clips = [], {}, []
+    # 事件名不能重名：marks 和句子 id（及 id_end、end）同名时会互相覆盖，句子开始时刻就丢了
+    taken = {"end"} | {x for k, L in enumerate(script["lines"]) for x in (L.get("id", f"l{k}"), L.get("id", f"l{k}") + "_end")}
+    seen = set()
+    for L in script["lines"]:
+        for name in (L.get("marks") or {}):
+            if name in taken or name in seen:
+                sys.exit(f"事件名“{name}”重名（和句子 id、id_end、end 或别的 mark 相同），请改 marks 里的名字")
+            seen.add(name)
     t = 0.6                                      # 片头留 0.6 秒给标题弹出
     for i, L in enumerate(script["lines"]):
         spk = L.get("speaker", "narrator")
