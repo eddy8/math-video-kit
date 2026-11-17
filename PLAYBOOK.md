@@ -23,12 +23,11 @@ pip install --break-system-packages edge-tts playwright scipy pillow
 4. 版权：教材只用来对齐知识点、说法、顺序和难度。视频里的情境、例题数字、角色、画面全部原创，不照搬插图、人物、原题、原文，不截取教材页面。
 5. 下载或渲染失败时：按课程表的知识点照常做，汇报里写明原因。
 
-## 3. 课程设计（Fable，每天只调用 1 次）
-- 用 Agent 工具，参数为 `model: "fable"`、`subagent_type: "general-purpose"`、`run_in_background: false`。
-- prompt 按 `docs/FABLE_BRIEF.md` 的模板，把两课的信息、教材要点和 `docs/ELEMENTS.md` 填进去，一次设计两课。
-- 把返回的设计分别存成 `lessons/Lnnnn/design.md`。
-- Fable 调用出错（例如额度用完、模型不可用、超时）时：不要重试，也不要换别的方式调用，由你按同样的模板自己设计，汇报里写明“今天 Fable 未参与设计，原因：……”。
-- 设计里有数学错误、说法和教材不一致，或者时长超标，由你直接修正，并在汇报里写明。不要为此再调用 Fable。
+## 3. 课程设计（你自己完成）
+- 全部工作由你自己完成，不调用子任务或其他模型。
+- 按 `docs/DESIGN_BRIEF.md` 的要求，结合两课的计划、教材要点和 `docs/ELEMENTS.md`，一次设计两课。
+- 设计分别存成 `lessons/Lnnnn/design.md`。
+- 写完后自查：数学是否正确、说法是否和教材一致、时长是否超标，有问题直接改。
 
 ## 4. 制作（每课依次做完一课，再做下一课）
 1. `python3 tools/new_lesson.py <课号>`：生成 `script.json` 和 `lesson.js` 骨架。
@@ -76,7 +75,7 @@ pip install --break-system-packages edge-tts playwright scipy pillow
   - 课号（全局课号，以及 `plan.py` 输出的本册第几课 `bookIndex`）、知识点、对应教材（册、单元、页码）、适合的年龄或年级、主题和讲法；
   - 完整配音稿（代码块）；
   - 练一练的题目和答案。
-- 消息最后写“模型分工”：设计是否由 Fable 完成，你对设计做过哪些改动，检查时发现并修改了什么，教材是否参考成功。
+- 消息最后写“制作说明”：检查时发现并修改了什么，教材是否参考成功。
 - 最后用 PushNotification 发一句话通知，例如“第 n、n+1 课视频和小红书文案已做好”。
 - 如果其中一条失败：另一条照常交付，并在消息和通知里写明哪条失败、卡在哪一步、报错是什么。
 - 如果配音服务连不上：不要换别的绕法，仍然交付只有字幕和音乐的版本，并写明“今天配音失败，原因：……”。

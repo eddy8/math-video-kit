@@ -11,7 +11,7 @@
 |---|---|
 | `PLAYBOOK.md` | 每日制作手册（定时任务照此执行） |
 | `docs/ELEMENTS.md` | 画面元件清单：角色动作、主题、道具、文字组件、音效 |
-| `docs/FABLE_BRIEF.md` | 交给 Fable 做课程设计的说明模板 |
+| `docs/DESIGN_BRIEF.md` | 课程设计说明 |
 | `data/curriculum.json` | 267 课的课程表（册、单元、课本页码） |
 | `engine/` | 播放器：舞台与主题、豆豆、道具库、文字层 |
 | `player.html` | 页面入口：`player.html?lesson=lessons/L0003` |
