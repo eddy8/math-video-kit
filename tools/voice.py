@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pron import check_script, to_tts   # 多音字检查与标音替换
+from limits import MAX_SECONDS, TARGET_SECONDS   # 时长规定
 
 import certifi
 certifi.where = lambda: "/root/.ccr/ca-bundle.crt"   # edge-tts 固定用 certifi；改用代理 CA
@@ -151,9 +152,9 @@ async def main(lesson_dir):
     tl = {"duration": duration, "lines": lines, "events": events,
           "mouth": {"fps": FPS, "data": [round(float(x), 3) for x in mouth]}}
     (d / "timeline.json").write_text(json.dumps(tl, ensure_ascii=False, indent=1))
-    print(f"时长 {duration}s（上限 60s）；事件：{events}")
-    if duration > 60:
-        sys.exit("超过 60 秒：请删减配音或停顿后重跑")
+    print(f"时长 {duration}s（目标 {TARGET_SECONDS}s 左右，上限 {MAX_SECONDS}s）；事件：{events}")
+    if duration > MAX_SECONDS:
+        sys.exit(f"超过 {MAX_SECONDS} 秒：请删减配音或停顿后重跑")
 
 
 if __name__ == "__main__":

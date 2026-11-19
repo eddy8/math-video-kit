@@ -36,7 +36,7 @@ pip install --break-system-packages edge-tts playwright scipy pillow
    - 所有数字、算式、答案先用 Python 算一遍。
    - 多音字：`data/polyphones.json` 里的字（数、重、长、量、行、差、称、率、倒、还、只、种）在 `say` 里每一处都要标音，写成 `数[shǔ]`、`重[chóng]`；也可以改写避开，例如把“不重”改成“不重复”时同样要标音。配音时标音的字会换成同音字（数[shǔ] 念“鼠”），字幕仍显示原字。`voice.py` 会先检查，有没标的字就直接报错并给出读音提示；也可以单独运行 `python3 tools/pron.py lessons/Lnnnn` 检查。发现新的读错的字，补进 `polyphones.json`。
 3. `python3 tools/voice.py lessons/Lnnnn`：生成配音和 `timeline.json`，会打印时长和全部事件时刻。
-   - 超过 60 秒就删减配音或停顿；目标 40–55 秒。
+   - 目标 60 秒左右，按内容灵活调整：要讲清楚、讲完整就可以多用几秒，内容简单就短一些，不要为了压时长删掉必要的讲解。超过 90 秒才需要删减配音或停顿（上限定义在 `tools/limits.py`）。
    - 关键词没找到会报错并列出逐词结果，按提示改 `marks`。
 4. 写 `lesson.js`：照着完整样例 `lessons/L0003/lesson.js`，用 `docs/ELEMENTS.md` 里的元件实现分镜。
    - 所有动画都是时间 t 的纯函数，事件时刻用 `E.事件名`。

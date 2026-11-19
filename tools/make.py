@@ -7,6 +7,7 @@
 """
 import json, re, subprocess, sys
 from pathlib import Path
+from limits import MAX_SECONDS   # 时长规定（tools/ 在 sys.path 里）
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -42,7 +43,7 @@ def main():
     for i in range(len(times)):
         (ROOT / d / f"_f{i}.jpg").unlink()
     w, h = probe["streams"][0].get("width"), probe["streams"][0].get("height")
-    ok = dur <= 60.5 and (w, h) == (1080, 1920)
+    ok = dur <= MAX_SECONDS + 0.5 and (w, h) == (1080, 1920)
     print(f"\n成片：{out}\n时长 {dur:.2f}s，{w}x{h}，响度 {li.group(1) if li else '?'} LUFS，峰值 {tp.group(1) if tp else '?'} dBTP\n抽帧：{ROOT / d / 'final_check.jpg'}\n{'通过' if ok else '未通过：时长或分辨率不符合要求'}")
     if not ok:
         sys.exit(1)
